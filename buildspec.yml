@@ -19,5 +19,5 @@ phases:
       - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest
       - echo Writing image definitions file...
       - printf '[{"name":"room1capstone2", "imageUri":"962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest"}]' > imagedefinitions.json
-  artifacts:
-    files: imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
