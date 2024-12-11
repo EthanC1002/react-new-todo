@@ -10,14 +10,14 @@ phases:
   build:
     commands:
       - echo build Docker image on 'date'
-      - docker build -t container_1 .
-      - docker tag container_1:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/container_1:latest
+      - docker build -t room1capstone2 .
+      - docker tag room1capstone2:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest
   post_build:
     commands:
       - echo build Docker image complete 'date'
       - echo push latest Docker images to ECR...
-      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/container_1:latest
+      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"container_1", "imageUri":"962804699607.dkr.ecr.us-west-2.amazonaws.com/container_1:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"room1capstone2", "imageUri":"962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest"}]' > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
