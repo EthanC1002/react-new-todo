@@ -17,3 +17,6 @@ phases:
       - echo build Docker image complete 'date'
       - echo push latest Docker images to ECR...
       - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest
+      - echo Writing image definitions file...
+  artifacts:
+    files: imagedefinitions.json
