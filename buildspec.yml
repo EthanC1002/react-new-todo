@@ -3,17 +3,18 @@ phases:
   install:
     commands:
       - echo install step...
-  pre_build: commands:
-    - echo logging in to AWS ECR...
-    - $(aws ecr get-login --no-include-email --region us-east -1)
+  pre_build: 
+    commands:
+      - echo logging in to AWS ECR...
+      - $(aws ecr get-login --no-include-email --region us-west-2)
   build:
     commands:
-      - echo build Docker image on 'date
+      - echo build Docker image on 'date'
       - cd src
-      - docker build -t room_one_img: latest
-      - docker tag room_one_img: latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2: latest post_build: commands:
+      - docker build -t room_one_img:latest
+      - docker tag room_one_img:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest
   post_build:
     commands:
-      - echo build Docker image complete date
+      - echo build Docker image complete 'date'
       - echo push latest Docker images to ECR...
-      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2: latest
+      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/room1capstone2:latest
